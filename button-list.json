@@ -1,0 +1,10 @@
+[
+    {"button": "deafult"},
+    {"button": "success"},
+    {"button": "info"},
+    {"button": "danger"},
+    {"button": "assignmentButton1"},
+    {"button": "assignmentButton2"},
+    {"button": "assignmentButton3"},
+    {"button": "assignmentButton4"}
+]

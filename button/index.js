@@ -2,11 +2,29 @@ import React, { Component } from "react";
 
 import { Text, TouchableOpacity } from "react-native";
 
-import { Base, Default, Danger, Info, Success } from "./styles";
+import {
+  Base,
+  Default,
+  Danger,
+  Info,
+  Success,
+  AssignmentButton1,
+  AssignmentButton2,
+  AssignmentButton3,
+  AssignmentButton4,
+} from "./styles";
 
 export default class Button extends Component {
   getTheme() {
-    const { danger, info, success } = this.props;
+    const {
+      danger,
+      info,
+      success,
+      assignmentButton1,
+      assignmentButton2,
+      assignmentButton3,
+      assignmentButton4,
+    } = this.props;
 
     if (info) {
       return Info;
@@ -19,7 +37,18 @@ export default class Button extends Component {
     if (danger) {
       return Danger;
     }
-
+    if (assignmentButton1) {
+      return AssignmentButton1;
+    }
+    if (assignmentButton2) {
+      return AssignmentButton2;
+    }
+    if (assignmentButton3) {
+      return AssignmentButton3;
+    }
+    if (assignmentButton4) {
+      return AssignmentButton4;
+    }
     return Default;
   }
 
