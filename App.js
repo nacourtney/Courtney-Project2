@@ -1,32 +1,14 @@
-import React from "react";
-import { Alert, StyleSheet, View } from "react-native";
+import React, { Component } from "react";
+import { Alert, SafeAreaView, StyleSheet } from "react-native";
 import Button from "./button";
-
 export default class App extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      data: [
-        { name: "sam", contact: "9999" },
-        {
-          name: "abc",
-          contact: "123",
-        },
-        {
-          name: "xyz",
-          contact: "789",
-        },
-      ],
-    };
-  }
   handleButtonPress() {
     Alert.alert("Alert", "You clicked this button!");
   }
 
   render() {
     return (
-      <View style={styles.container}>
-        <Button style={styles.button}>My first button</Button>
+      <SafeAreaView styles={styles.container}>
         <Button success style={styles.button}>
           Success button
         </Button>
@@ -53,7 +35,7 @@ export default class App extends React.Component {
         <Button assignmentButton4 style={styles.button}>
           AssignmentButton4
         </Button>
-      </View>
+      </SafeAreaView>
     );
   }
 }

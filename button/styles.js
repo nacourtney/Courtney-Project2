@@ -54,6 +54,12 @@ const AssignmentButton1 = StyleSheet.create({
     shadowRadius: 15,
     shadowOffset: { width: 25, height: 13 },
   },
+  label: {
+    color: "orange",
+    fontWeight: "bold",
+    textAlign: "center",
+    backgroundColor: "transparent",
+  },
 });
 
 const AssignmentButton2 = StyleSheet.create({
@@ -102,6 +108,12 @@ const AssignmentButton4 = StyleSheet.create({
     borderBottomEndRadius: 30,
     borderTopLeftRadius: 30,
     borderColor: "#ff0090",
+  },
+  label: {
+    color: "#ff0090",
+    fontWeight: "bold",
+    textAlign: "center",
+    backgroundColor: "transparent",
   },
 });
 

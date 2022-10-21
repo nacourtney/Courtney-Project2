@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { Text, TouchableOpacity } from "react-native";
+import { Text, TouchableOpacity, View, StyleSheet } from "react-native";
 
 import {
   Base,
@@ -57,13 +57,34 @@ export default class Button extends Component {
     const { children, onPress, style, rounded } = this.props;
 
     return (
-      <TouchableOpacity
-        activeOpacity={0.8}
-        style={[Base.main, theme.main, rounded ? Base.rounded : null, style]}
-        onPress={onPress}
-      >
-        <Text style={[Base.label, theme.label]}>{children}</Text>
-      </TouchableOpacity>
+      <View style={styles.list}>
+        <View>
+          {
+            <TouchableOpacity
+              activeOpacity={0.8}
+              style={[
+                Base.main,
+                theme.main,
+                rounded ? Base.rounded : null,
+                style,
+              ]}
+              onPress={onPress}
+            >
+              <Text style={[Base.label, theme.label]}>{children}</Text>
+            </TouchableOpacity>
+          }
+        </View>
+      </View>
     );
   }
 }
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  button: {
+    margin: 15,
+  },
+});
