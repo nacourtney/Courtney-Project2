@@ -1,7 +1,6 @@
-import React from "react";
-import { Alert, StyleSheet, View } from "react-native";
+import React, { Component } from "react";
+import { Alert, SafeAreaView, StyleSheet } from "react-native";
 import Button from "./button";
-
 export default class App extends React.Component {
   handleButtonPress() {
     Alert.alert("Alert", "You clicked this button!");
@@ -9,8 +8,7 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <Button style={styles.button}>My first button</Button>
+      <SafeAreaView styles={styles.container}>
         <Button success style={styles.button}>
           Success button
         </Button>
@@ -25,7 +23,19 @@ export default class App extends React.Component {
         >
           Rounded button
         </Button>
-      </View>
+        <Button assignmentButton1 style={styles.button}>
+          AssignmentButton1
+        </Button>
+        <Button assignmentButton2 style={styles.button}>
+          AssignmentButton2
+        </Button>
+        <Button assignmentButton3 style={styles.button}>
+          AssignmentButton3
+        </Button>
+        <Button assignmentButton4 style={styles.button}>
+          AssignmentButton4
+        </Button>
+      </SafeAreaView>
     );
   }
 }
@@ -37,6 +47,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   button: {
-    margin: 10,
+    margin: 15,
   },
 });
