@@ -1,60 +1,23 @@
 import React, { Component } from "react";
 
-import { Text, TouchableOpacity, View, StyleSheet } from "react-native";
+import { TouchableOpacity, View, StyleSheet, Button } from "react-native";
 
-import {
-  Base,
-  Default,
-  Danger,
-  Info,
-  Success,
-  AssignmentButton1,
-  AssignmentButton2,
-  AssignmentButton3,
-  AssignmentButton4,
-} from "./styles";
+import { Base, Default } from "./styles";
 
-export default class Button extends Component {
+export default class ButtonClass extends Component {
   getTheme() {
-    const {
-      danger,
-      info,
-      success,
-      assignmentButton1,
-      assignmentButton2,
-      assignmentButton3,
-      assignmentButton4,
-    } = this.props;
+    const { buttonStyle } = this.props;
 
-    if (info) {
-      return Info;
+    if (buttonStyle) {
+      return buttonStyle;
     }
 
-    if (success) {
-      return Success;
-    }
-
-    if (danger) {
-      return Danger;
-    }
-    if (assignmentButton1) {
-      return AssignmentButton1;
-    }
-    if (assignmentButton2) {
-      return AssignmentButton2;
-    }
-    if (assignmentButton3) {
-      return AssignmentButton3;
-    }
-    if (assignmentButton4) {
-      return AssignmentButton4;
-    }
     return Default;
   }
 
   render() {
     const theme = this.getTheme();
-    const { children, onPress, style, rounded } = this.props;
+    const { title, onPress, style, rounded } = this.props;
 
     return (
       <View style={styles.list}>
@@ -68,9 +31,12 @@ export default class Button extends Component {
                 rounded ? Base.rounded : null,
                 style,
               ]}
-              onPress={onPress}
             >
-              <Text style={[Base.label, theme.label]}>{children}</Text>
+              <Button
+                title={title}
+                onPress={onPress}
+                style={[Base.label, theme.label]}
+              ></Button>
             </TouchableOpacity>
           }
         </View>
